@@ -152,61 +152,49 @@ body[data-lang="es"] [lang="en"] { display: none !important; }
     color: var(--foreground);
 }
 
-/* ── Minimalist single-CTA language swap ────────────────────────────────── */
-.lang-swap {
+/* ── Language switch · segmented control (matches Strata DS pattern
+       used in the prototype for Products / Materials / Spaces toggles). ── */
+.lang-toggle {
     display: inline-flex;
     align-items: center;
-    gap: 0.5rem;
+    gap: 2px;
     background: var(--card);
     border: 1px solid var(--border);
     border-radius: var(--radius-full);
-    padding: 0.4rem 0.85rem;
+    padding: 3px;
     font-family: var(--font-sans);
-    font-size: 0.78rem;
-    font-weight: 600;
-    color: var(--foreground);
-    cursor: pointer;
-    transition: background-color 140ms ease, border-color 140ms ease, transform 140ms ease;
     line-height: 1;
-    text-align: left;
 }
 
-.lang-swap:hover {
-    background: var(--primary);
-    border-color: var(--primary);
-    color: var(--primary-foreground);
+.lang-toggle button {
+    background: transparent;
+    border: 0;
+    padding: 6px 14px;
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--muted-foreground);
+    cursor: pointer;
+    border-radius: var(--radius-full);
+    transition: background-color 140ms ease, color 140ms ease;
+    font-family: inherit;
+    line-height: 1;
 }
 
-.lang-swap:active {
-    transform: scale(0.97);
+.lang-toggle button:hover {
+    color: var(--foreground);
 }
 
-.lang-swap:focus-visible {
+.lang-toggle button:focus-visible {
     outline: 2px solid var(--primary);
     outline-offset: 2px;
 }
 
-.lang-swap-icon {
-    width: 14px;
-    height: 14px;
-    color: var(--muted-foreground);
-    flex-shrink: 0;
-}
-
-.lang-swap:hover .lang-swap-icon,
-.lang-swap:hover .lang-swap-chevron {
+body[data-lang="en"] .lang-toggle button[data-set="en"],
+body[data-lang="es"] .lang-toggle button[data-set="es"] {
+    background: var(--primary);
     color: var(--primary-foreground);
-}
-
-.lang-swap-label {
-    letter-spacing: 0.01em;
-}
-
-.lang-swap-chevron {
-    width: 14px;
-    height: 14px;
-    color: var(--muted-foreground);
-    flex-shrink: 0;
 }
 
 /* ── Layout shell ───────────────────────────────────────────────────────── */

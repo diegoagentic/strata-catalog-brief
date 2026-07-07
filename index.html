@@ -7,33 +7,20 @@
     <meta name="description" content="The consolidated storefront for dealer selection & quoting — a bilingual (EN / ES) product brief.">
     <link rel="preconnect" href="https://rsms.me/">
     <link rel="stylesheet" href="https://rsms.me/inter/inter.css">
-    <link rel="stylesheet" href="style.css?v=3">
+    <link rel="stylesheet" href="style.css?v=4">
 </head>
 <body data-lang="en">
     <a class="skip-link" href="#content">Skip to content</a>
 
     <!-- ═════════════════════════════════════════════════════════════
-         TOP BAR · brand + minimalist language swap CTA
+         TOP BAR · brand + language switch (segmented control · DS pattern)
          ═════════════════════════════════════════════════════════════ -->
     <header class="topbar" role="banner">
         <div class="topbar-brand">Strata · Product Catalog Brief</div>
-        <button class="lang-swap" id="lang-swap" type="button" aria-label="Change language">
-            <svg class="lang-swap-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                <circle cx="12" cy="12" r="10"></circle>
-                <path d="M2 12h20"></path>
-                <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
-            </svg>
-            <span class="lang-swap-label">
-                <span lang="en">English</span>
-                <span lang="es">Español</span>
-            </span>
-            <svg class="lang-swap-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                <path d="M8 7L4 11l4 4"></path>
-                <path d="M4 11h13"></path>
-                <path d="M16 17l4-4-4-4"></path>
-                <path d="M20 13H7"></path>
-            </svg>
-        </button>
+        <div class="lang-toggle" role="group" aria-label="Language">
+            <button type="button" data-set="en" aria-label="Switch to English">EN</button>
+            <button type="button" data-set="es" aria-label="Cambiar a español">ES</button>
+        </div>
     </header>
 
     <main id="content" class="page">
@@ -589,7 +576,7 @@
             var STORAGE_KEY = 'strata-brief-lang';
             var body = document.body;
             var html = document.documentElement;
-            var swap = document.getElementById('lang-swap');
+            var buttons = document.querySelectorAll('.lang-toggle button');
 
             function applyLang(lang) {
                 if (lang !== 'en' && lang !== 'es') lang = 'en';
@@ -603,13 +590,11 @@
             try { saved = localStorage.getItem(STORAGE_KEY); } catch (e) { /* private mode */ }
             applyLang(saved || 'en');
 
-            // Single-CTA swap · toggles between EN and ES
-            if (swap) {
-                swap.addEventListener('click', function () {
-                    var next = body.getAttribute('data-lang') === 'en' ? 'es' : 'en';
-                    applyLang(next);
+            buttons.forEach(function (btn) {
+                btn.addEventListener('click', function () {
+                    applyLang(btn.getAttribute('data-set'));
                 });
-            }
+            });
 
             // Hide broken screenshots so the figure placeholder stays visible.
             document.querySelectorAll('.figure img').forEach(function (img) {
