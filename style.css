@@ -112,6 +112,87 @@ img {
     display: block;
 }
 
+/* ══════════════════════════════════════════════════════════════════════════
+   LANGUAGE TOGGLE · show only one language at a time.
+   Default state: <body data-lang="en"> shows [lang="en"], hides [lang="es"].
+   When toggle sets data-lang="es", flip.
+   ══════════════════════════════════════════════════════════════════════════ */
+body[data-lang="en"] [lang="es"] {
+    display: none;
+}
+
+body[data-lang="es"] [lang="en"] {
+    display: none;
+}
+
+/* ── Sticky top bar with language switcher ──────────────────────────────── */
+.topbar {
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    background: color-mix(in srgb, var(--background) 85%, transparent);
+    backdrop-filter: saturate(140%) blur(8px);
+    -webkit-backdrop-filter: saturate(140%) blur(8px);
+    border-bottom: 1px solid var(--border);
+    padding: var(--space-3) var(--space-4);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--space-4);
+}
+
+.topbar-brand {
+    font-family: var(--font-brand);
+    font-weight: 700;
+    font-size: 0.9rem;
+    letter-spacing: -0.01em;
+    color: var(--foreground);
+}
+
+.topbar-brand small {
+    font-family: var(--font-sans);
+    color: var(--muted-foreground);
+    font-weight: 400;
+    margin-left: var(--space-2);
+    font-size: 0.75rem;
+}
+
+.lang-toggle {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.25rem;
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-full);
+    padding: 0.25rem;
+    font-family: var(--font-sans);
+}
+
+.lang-toggle button {
+    background: transparent;
+    border: 0;
+    padding: 0.35rem 0.75rem;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--muted-foreground);
+    cursor: pointer;
+    border-radius: var(--radius-full);
+    transition: background-color 120ms ease, color 120ms ease;
+    font-family: inherit;
+}
+
+.lang-toggle button:hover {
+    color: var(--foreground);
+}
+
+body[data-lang="en"] .lang-toggle button[data-set="en"],
+body[data-lang="es"] .lang-toggle button[data-set="es"] {
+    background: var(--primary);
+    color: var(--primary-foreground);
+}
+
 /* ── Layout shell ───────────────────────────────────────────────────────── */
 .page {
     max-width: 1200px;
@@ -146,11 +227,8 @@ img {
     font-size: 1.5rem;
     font-weight: 700;
     color: var(--foreground);
-    margin-bottom: var(--space-4);
-    display: flex;
-    align-items: baseline;
-    flex-wrap: wrap;
-    gap: var(--space-2);
+    margin-bottom: var(--space-2);
+    display: block;
 }
 
 @media (min-width: 768px) {
@@ -159,48 +237,11 @@ img {
     }
 }
 
-.section-title-alt {
-    font-family: var(--font-sans);
-    font-size: 0.9em;
-    font-weight: 400;
-    color: var(--muted-foreground);
-    letter-spacing: 0;
-}
-
 .section-lede {
     color: var(--muted-foreground);
     font-size: 0.95rem;
     margin-bottom: var(--space-6);
     max-width: 65ch;
-}
-
-/* ── Bilingual grid (EN | ES) ───────────────────────────────────────────── */
-.bilingual {
-    display: grid;
-    gap: var(--space-6);
-}
-
-@media (min-width: 1024px) {
-    .bilingual {
-        grid-template-columns: 1fr 1fr;
-        gap: var(--space-8);
-    }
-
-    .bilingual > [lang="es"] {
-        border-left: 1px solid var(--border);
-        padding-left: var(--space-8);
-    }
-}
-
-.bilingual [lang]::before {
-    content: attr(lang);
-    text-transform: uppercase;
-    font-size: 0.65rem;
-    font-weight: 700;
-    letter-spacing: 0.15em;
-    color: var(--muted-foreground);
-    display: block;
-    margin-bottom: var(--space-3);
 }
 
 /* ── Hero ───────────────────────────────────────────────────────────────── */
@@ -366,51 +407,48 @@ img {
     color: var(--foreground);
 }
 
-.ref-panel-figure {
-    margin: var(--space-4) 0 0;
-    border: 1px solid var(--border);
-    border-radius: var(--radius-md);
-    overflow: hidden;
-    background: var(--muted);
-}
-
-.ref-panel-figure img,
-.figure img {
-    display: block;
-    width: 100%;
-    min-height: 220px;
-    object-fit: cover;
-    background: var(--muted);
-}
-
-/* Figure placeholder · shown when img has no src or fails */
+/* ── Figure · screenshot with placeholder that shows the caption when
+       the image hasn't loaded yet (broken src or missing file). The
+       caption pseudo-element sits underneath the img and is covered
+       once the img loads successfully. If the img fails, an inline
+       onerror handler hides the img and the caption stays visible. ─── */
 .figure {
+    position: relative;
     background: var(--muted);
     border: 1px dashed var(--border);
     border-radius: var(--radius-md);
     min-height: 260px;
+    overflow: hidden;
+    margin: var(--space-4) 0;
     display: flex;
     align-items: center;
     justify-content: center;
     padding: var(--space-4);
+}
+
+.figure::before {
+    content: 'Screenshot · ' attr(data-caption);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     color: var(--muted-foreground);
     font-size: 0.85rem;
+    padding: 0 1rem;
+    max-width: 90%;
     text-align: center;
-    margin: var(--space-4) 0;
-    overflow: hidden;
+    z-index: 0;
+    letter-spacing: 0.02em;
+    line-height: 1.5;
 }
 
 .figure img {
-    border-radius: var(--radius-md);
-    min-height: auto;
-}
-
-.figure-caption {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    height: auto;
     display: block;
-    margin-top: var(--space-2);
-    font-size: 0.75rem;
-    color: var(--muted-foreground);
-    text-align: center;
+    border-radius: var(--radius-md);
 }
 
 /* ── Value bullets (section 6) ──────────────────────────────────────────── */
@@ -551,6 +589,22 @@ img {
     border-radius: var(--radius-md);
     color: var(--foreground);
     font-size: 0.95rem;
+}
+
+/* ── Two-column figure pair (section 5) ─────────────────────────────────── */
+.figure-pair {
+    display: grid;
+    gap: var(--space-4);
+    grid-template-columns: 1fr;
+    margin-top: var(--space-4);
+}
+
+@media (min-width: 768px) {
+    .figure-pair { grid-template-columns: 1fr 1fr; }
+}
+
+.figure-pair .figure {
+    margin: 0;
 }
 
 /* ── Footer ─────────────────────────────────────────────────────────────── */

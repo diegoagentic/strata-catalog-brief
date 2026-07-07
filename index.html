@@ -9,8 +9,25 @@
     <link rel="stylesheet" href="https://rsms.me/inter/inter.css">
     <link rel="stylesheet" href="style.css">
 </head>
-<body>
+<body data-lang="en">
     <a class="skip-link" href="#content">Skip to content</a>
+
+    <!-- ═════════════════════════════════════════════════════════════
+         TOP BAR · brand + language toggle
+         ═════════════════════════════════════════════════════════════ -->
+    <header class="topbar" role="banner">
+        <div class="topbar-brand">
+            Strata · Product Catalog Brief
+            <small>
+                <span lang="en">Bilingual · EN / ES</span>
+                <span lang="es">Bilingüe · EN / ES</span>
+            </small>
+        </div>
+        <div class="lang-toggle" role="group" aria-label="Language switcher">
+            <button type="button" data-set="en" aria-label="Switch to English">EN</button>
+            <button type="button" data-set="es" aria-label="Cambiar a español">ES</button>
+        </div>
+    </header>
 
     <main id="content" class="page">
 
@@ -18,21 +35,20 @@
              1. HERO
              ═════════════════════════════════════════════════════════════ -->
         <section class="hero" aria-labelledby="hero-title">
-            <span class="hero-eyebrow">Strata · Product Brief · EN / ES</span>
+            <span class="hero-eyebrow">
+                <span lang="en">Product Brief</span>
+                <span lang="es">Resumen de producto</span>
+            </span>
             <h1 id="hero-title" class="hero-title">
-                The consolidated storefront for dealer selection &amp; quoting.
+                <span lang="en">The consolidated storefront for dealer selection &amp; quoting.</span>
+                <span lang="es">La tienda consolidada para selección y cotización del dealer.</span>
             </h1>
             <p class="hero-subtitle">
-                Product Catalog and My Selection are the current version of the workspace —
-                built by reuniting the best of MRL, Dealer/Quote and Figma into a single
-                place a dealer actually wants to work in.
-                <br><br>
-                Product Catalog y My Selection son la versión actual del workspace —
-                construidos reuniendo lo mejor de MRL, Dealer/Quote y Figma en un solo
-                lugar donde un dealer realmente quiere trabajar.
+                <span lang="en">Product Catalog and My Selection are the current version of the workspace — built by reuniting the best of MRL, Dealer/Quote and Figma into a single place a dealer actually wants to work in.</span>
+                <span lang="es">Product Catalog y My Selection son la versión actual del workspace — construidos reuniendo lo mejor de MRL, Dealer/Quote y Figma en un solo lugar donde un dealer realmente quiere trabajar.</span>
             </p>
-            <figure class="figure">
-                <img src="img/hero-overview.png" alt="Overview screenshot of the Product Catalog workspace with sidebar and product grid.">
+            <figure class="figure" data-caption="Product Catalog · full-app overview">
+                <img src="img/hero-overview.png" alt="Overview of the Product Catalog workspace with sidebar and product grid." loading="lazy">
             </figure>
         </section>
 
@@ -41,54 +57,29 @@
              ═════════════════════════════════════════════════════════════ -->
         <section class="section" aria-labelledby="s2-title">
             <h2 id="s2-title" class="section-title">
-                What problem this solves
-                <span class="section-title-alt">/ Qué problema resuelve</span>
+                <span lang="en">What problem this solves</span>
+                <span lang="es">Qué problema resuelve</span>
             </h2>
 
-            <div class="bilingual">
-                <div lang="en">
-                    <p class="section-lede">
-                        A dealer spends most of the day switching between vendor PDFs,
-                        spreadsheets and email threads. The workspace fixes three specific
-                        frictions that cost them hours every week.
-                    </p>
-                    <ul class="pain-list">
-                        <li class="pain-item">
-                            <strong>A different catalog per brand</strong> — no single place
-                            to search across all vendors at once.
-                        </li>
-                        <li class="pain-item">
-                            <strong>Quote drafts live in Excel and email</strong> — versions
-                            get lost, teammates step on each other's edits.
-                        </li>
-                        <li class="pain-item">
-                            <strong>Every new space is quoted from scratch</strong> —
-                            nothing built for one client gets reused for the next one.
-                        </li>
-                    </ul>
-                </div>
-                <div lang="es">
-                    <p class="section-lede">
-                        Un dealer pasa la mayor parte del día saltando entre PDFs de
-                        proveedores, hojas de cálculo y cadenas de correo. El workspace
-                        resuelve tres fricciones específicas que le cuestan horas cada semana.
-                    </p>
-                    <ul class="pain-list">
-                        <li class="pain-item">
-                            <strong>Un catálogo distinto por marca</strong> — no hay un
-                            solo lugar para buscar entre todos los proveedores.
-                        </li>
-                        <li class="pain-item">
-                            <strong>Los borradores de cotización viven en Excel y correos</strong>
-                            — se pierden versiones, dos personas editan lo mismo.
-                        </li>
-                        <li class="pain-item">
-                            <strong>Cada espacio se cotiza desde cero</strong> — lo que
-                            se armó para un cliente no se reutiliza para el siguiente.
-                        </li>
-                    </ul>
-                </div>
-            </div>
+            <p class="section-lede">
+                <span lang="en">A dealer spends most of the day switching between vendor PDFs, spreadsheets and email threads. The workspace fixes three specific frictions that cost them hours every week.</span>
+                <span lang="es">Un dealer pasa la mayor parte del día saltando entre PDFs de proveedores, hojas de cálculo y cadenas de correo. El workspace resuelve tres fricciones específicas que le cuestan horas cada semana.</span>
+            </p>
+
+            <ul class="pain-list">
+                <li class="pain-item">
+                    <span lang="en"><strong>A different catalog per brand</strong> — no single place to search across all vendors at once.</span>
+                    <span lang="es"><strong>Un catálogo distinto por marca</strong> — no hay un solo lugar para buscar entre todos los proveedores.</span>
+                </li>
+                <li class="pain-item">
+                    <span lang="en"><strong>Quote drafts live in Excel and email</strong> — versions get lost, teammates step on each other's edits.</span>
+                    <span lang="es"><strong>Los borradores de cotización viven en Excel y correos</strong> — se pierden versiones, dos personas editan lo mismo.</span>
+                </li>
+                <li class="pain-item">
+                    <span lang="en"><strong>Every new space is quoted from scratch</strong> — nothing built for one client gets reused for the next one.</span>
+                    <span lang="es"><strong>Cada espacio se cotiza desde cero</strong> — lo que se armó para un cliente no se reutiliza para el siguiente.</span>
+                </li>
+            </ul>
         </section>
 
         <!-- ═════════════════════════════════════════════════════════════
@@ -96,27 +87,14 @@
              ═════════════════════════════════════════════════════════════ -->
         <section class="section" aria-labelledby="s3-title">
             <h2 id="s3-title" class="section-title">
-                How to read the five tabs
-                <span class="section-title-alt">/ Cómo leer los cinco tabs</span>
+                <span lang="en">How to read the five tabs</span>
+                <span lang="es">Cómo leer los cinco tabs</span>
             </h2>
 
-            <div class="bilingual">
-                <div lang="en">
-                    <p class="section-lede">
-                        The workspace has five tabs. Three of them are <strong>reference
-                        tabs</strong> — kept as living documentation of where we started.
-                        Two of them are the <strong>current version</strong> — where the
-                        real work happens.
-                    </p>
-                </div>
-                <div lang="es">
-                    <p class="section-lede">
-                        El workspace tiene cinco tabs. Tres son <strong>tabs de referencia</strong>
-                        — se conservan como documentación viva del punto de partida.
-                        Dos son la <strong>versión actual</strong> — donde ocurre el trabajo real.
-                    </p>
-                </div>
-            </div>
+            <p class="section-lede">
+                <span lang="en">The workspace has five tabs. Three are <strong>reference tabs</strong>, kept as living documentation of where we started. Two are the <strong>current version</strong>, where the real work happens.</span>
+                <span lang="es">El workspace tiene cinco tabs. Tres son <strong>tabs de referencia</strong>, conservados como documentación viva del punto de partida. Dos son la <strong>versión actual</strong>, donde ocurre el trabajo real.</span>
+            </p>
 
             <div class="tab-grid" style="margin-top: 1.5rem;">
                 <article class="tab-card">
@@ -125,11 +103,8 @@
                         <span class="chip chip--reference">Reference</span>
                     </div>
                     <p class="tab-card-body">
-                        Classic vendor library. Brand → category → product with rich specs
-                        and CAD/Revit downloads.
-                        <br><br>
-                        Librería clásica del proveedor. Marca → categoría → producto con
-                        specs ricas y descargables CAD/Revit.
+                        <span lang="en">Classic vendor library. Brand → category → product with rich specs and CAD / Revit downloads.</span>
+                        <span lang="es">Librería clásica del proveedor. Marca → categoría → producto con specs ricas y descargables CAD / Revit.</span>
                     </p>
                 </article>
 
@@ -139,10 +114,8 @@
                         <span class="chip chip--reference">Reference</span>
                     </div>
                     <p class="tab-card-body">
-                        Admin panel to manage imported catalogs and buying preferences.
-                        <br><br>
-                        Panel administrativo para gestionar los catálogos importados y las
-                        preferencias de compra.
+                        <span lang="en">Admin panel to manage imported catalogs and buying preferences.</span>
+                        <span lang="es">Panel administrativo para gestionar catálogos importados y preferencias de compra.</span>
                     </p>
                 </article>
 
@@ -152,9 +125,8 @@
                         <span class="chip chip--reference">Reference</span>
                     </div>
                     <p class="tab-card-body">
-                        Curated storefront aligned with the original Figma design.
-                        <br><br>
-                        Storefront curado, alineado con el diseño original de Figma.
+                        <span lang="en">Curated storefront aligned with the original Figma design.</span>
+                        <span lang="es">Storefront curado, alineado con el diseño original de Figma.</span>
                     </p>
                 </article>
 
@@ -164,11 +136,8 @@
                         <span class="chip chip--current">Current version</span>
                     </div>
                     <p class="tab-card-body">
-                        The consolidated storefront. Products, materials and pre-configured
-                        spaces in one place.
-                        <br><br>
-                        La tienda consolidada. Productos, materiales y espacios
-                        pre-configurados en un solo lugar.
+                        <span lang="en">The consolidated storefront. Products, materials and pre-configured spaces in one place.</span>
+                        <span lang="es">La tienda consolidada. Productos, materiales y espacios pre-configurados en un solo lugar.</span>
                     </p>
                 </article>
 
@@ -178,11 +147,8 @@
                         <span class="chip chip--current">Current version</span>
                     </div>
                     <p class="tab-card-body">
-                        The live workspace. Multi-draft quotes, auto-filled buyer info,
-                        submit flow with a reference number.
-                        <br><br>
-                        El workspace vivo. Cotizaciones multi-borrador, información del
-                        comprador auto-completada, flujo de submit con número de referencia.
+                        <span lang="en">The live workspace. Multi-draft quotes, auto-filled buyer info, submit flow with reference number.</span>
+                        <span lang="es">El workspace vivo. Cotizaciones multi-borrador, info del comprador auto-completada, flujo de submit con número de referencia.</span>
                     </p>
                 </article>
             </div>
@@ -193,26 +159,14 @@
              ═════════════════════════════════════════════════════════════ -->
         <section class="section" aria-labelledby="s4-title">
             <h2 id="s4-title" class="section-title">
-                The reference tabs
-                <span class="section-title-alt">/ Los tabs de referencia</span>
+                <span lang="en">The reference tabs</span>
+                <span lang="es">Los tabs de referencia</span>
             </h2>
 
-            <div class="bilingual" style="margin-bottom: 2rem;">
-                <div lang="en">
-                    <p class="section-lede">
-                        We keep them visible on purpose. Each one carries a pattern the
-                        dealer already knows from the industry — we didn't want to erase
-                        that knowledge; we wanted to bring it forward.
-                    </p>
-                </div>
-                <div lang="es">
-                    <p class="section-lede">
-                        Los mantenemos visibles a propósito. Cada uno carga un patrón que
-                        el dealer ya conoce de la industria — no queríamos borrar ese
-                        conocimiento, queríamos llevarlo adelante.
-                    </p>
-                </div>
-            </div>
+            <p class="section-lede">
+                <span lang="en">We keep them visible on purpose. Each one carries a pattern the dealer already knows from the industry — we didn't want to erase that knowledge; we wanted to bring it forward.</span>
+                <span lang="es">Los mantenemos visibles a propósito. Cada uno carga un patrón que el dealer ya conoce de la industria — no queríamos borrar ese conocimiento, queríamos llevarlo adelante.</span>
+            </p>
 
             <!-- MRL -->
             <article class="ref-panel">
@@ -220,41 +174,27 @@
                     <span class="ref-panel-title">MRL · Manufacturer Reference Library</span>
                     <span class="chip chip--reference">Reference</span>
                 </header>
-                <div class="bilingual">
-                    <div lang="en">
-                        <p>
-                            The classic vendor library structure that every A&amp;D professional
-                            recognizes. Seven manufacturers — Allermuir, Allsteel, AIS, Luum,
-                            Camira, HBF and Mayer — organized as brand pages with sales and
-                            A&amp;D contacts, product families, and downloadable resources
-                            (PDF guarantees, brochures, AutoCAD / Revit / SketchUp files).
-                        </p>
-                        <p><strong>What we kept from it:</strong></p>
-                        <ul>
-                            <li>Rich brand pages with the vendor identity intact.</li>
-                            <li>Product specs, performance data and warranty PDFs.</li>
-                            <li>Symbol folders with 2D and 3D drawings across formats.</li>
-                        </ul>
-                    </div>
-                    <div lang="es">
-                        <p>
-                            La estructura clásica de librería de proveedor que todo profesional
-                            de A&amp;D reconoce. Siete fabricantes — Allermuir, Allsteel, AIS,
-                            Luum, Camira, HBF y Mayer — organizados como páginas de marca con
-                            contactos de ventas y A&amp;D, familias de producto y recursos
-                            descargables (PDFs de garantía, folletos, archivos AutoCAD /
-                            Revit / SketchUp).
-                        </p>
-                        <p><strong>Qué conservamos:</strong></p>
-                        <ul>
-                            <li>Páginas de marca ricas, con la identidad del proveedor intacta.</li>
-                            <li>Specs de producto, datos de performance y PDFs de garantía.</li>
-                            <li>Carpetas de símbolos con dibujos 2D y 3D en varios formatos.</li>
-                        </ul>
-                    </div>
-                </div>
-                <figure class="ref-panel-figure">
-                    <img src="img/tab-mrl.png" alt="MRL tab · brand library landing view with brand cards.">
+                <p>
+                    <span lang="en">The classic vendor library structure that every A&amp;D professional recognizes. Seven manufacturers — Allermuir, Allsteel, AIS, Luum, Camira, HBF and Mayer — organized as brand pages with sales and A&amp;D contacts, product families, and downloadable resources (PDF guarantees, brochures, AutoCAD / Revit / SketchUp files).</span>
+                    <span lang="es">La estructura clásica de librería de proveedor que todo profesional de A&amp;D reconoce. Siete fabricantes — Allermuir, Allsteel, AIS, Luum, Camira, HBF y Mayer — organizados como páginas de marca con contactos de ventas y A&amp;D, familias de producto y recursos descargables (PDFs de garantía, folletos, archivos AutoCAD / Revit / SketchUp).</span>
+                </p>
+                <p><strong><span lang="en">What we kept from it:</span><span lang="es">Qué conservamos:</span></strong></p>
+                <ul>
+                    <li>
+                        <span lang="en">Rich brand pages with the vendor identity intact.</span>
+                        <span lang="es">Páginas de marca ricas, con la identidad del proveedor intacta.</span>
+                    </li>
+                    <li>
+                        <span lang="en">Product specs, performance data and warranty PDFs.</span>
+                        <span lang="es">Specs de producto, datos de performance y PDFs de garantía.</span>
+                    </li>
+                    <li>
+                        <span lang="en">Symbol folders with 2D and 3D drawings across formats.</span>
+                        <span lang="es">Carpetas de símbolos con dibujos 2D y 3D en varios formatos.</span>
+                    </li>
+                </ul>
+                <figure class="figure" data-caption="MRL · brand library landing">
+                    <img src="img/tab-mrl.png" alt="MRL tab · brand library landing view with brand cards." loading="lazy">
                 </figure>
             </article>
 
@@ -264,39 +204,27 @@
                     <span class="ref-panel-title">Dealer / Quote · Manage Catalogs</span>
                     <span class="chip chip--reference">Reference</span>
                 </header>
-                <div class="bilingual">
-                    <div lang="en">
-                        <p>
-                            The dealer's control center. Imported catalog cards with sync
-                            status (Active, Update Available, Out of Sync), delta reports
-                            on every sync, tenant-scoped buying preferences, and the option
-                            to import a new catalog or disconnect an existing one.
-                        </p>
-                        <p><strong>What we kept from it:</strong></p>
-                        <ul>
-                            <li>Explicit catalog status per source so nothing goes stale silently.</li>
-                            <li>Delta reporting on updates (added / updated / removed items).</li>
-                            <li>Per-tenant preferences — brand priorities, delivery zones.</li>
-                        </ul>
-                    </div>
-                    <div lang="es">
-                        <p>
-                            El centro de control del dealer. Tarjetas de catálogos importados
-                            con estado de sync (Activo, Actualización Disponible, Fuera de
-                            Sync), reportes de delta en cada sync, preferencias de compra
-                            por tenant, y la opción de importar un nuevo catálogo o
-                            desconectar uno existente.
-                        </p>
-                        <p><strong>Qué conservamos:</strong></p>
-                        <ul>
-                            <li>Estado explícito por catálogo — nada queda desactualizado en silencio.</li>
-                            <li>Reporte de delta al actualizar (ítems añadidos / actualizados / removidos).</li>
-                            <li>Preferencias por tenant — prioridades de marca, zonas de entrega.</li>
-                        </ul>
-                    </div>
-                </div>
-                <figure class="ref-panel-figure">
-                    <img src="img/tab-dealer-quote.png" alt="Dealer / Quote tab · imported catalogs card grid.">
+                <p>
+                    <span lang="en">The dealer's control center. Imported catalog cards with sync status (Active, Update Available, Out of Sync), delta reports on every sync, tenant-scoped buying preferences, and the option to import a new catalog or disconnect an existing one.</span>
+                    <span lang="es">El centro de control del dealer. Tarjetas de catálogos importados con estado de sync (Activo, Actualización Disponible, Fuera de Sync), reportes de delta en cada sync, preferencias de compra por tenant, y la opción de importar un nuevo catálogo o desconectar uno existente.</span>
+                </p>
+                <p><strong><span lang="en">What we kept from it:</span><span lang="es">Qué conservamos:</span></strong></p>
+                <ul>
+                    <li>
+                        <span lang="en">Explicit catalog status per source so nothing goes stale silently.</span>
+                        <span lang="es">Estado explícito por catálogo — nada queda desactualizado en silencio.</span>
+                    </li>
+                    <li>
+                        <span lang="en">Delta reporting on updates (added / updated / removed items).</span>
+                        <span lang="es">Reporte de delta al actualizar (ítems añadidos / actualizados / removidos).</span>
+                    </li>
+                    <li>
+                        <span lang="en">Per-tenant preferences — brand priorities, delivery zones.</span>
+                        <span lang="es">Preferencias por tenant — prioridades de marca, zonas de entrega.</span>
+                    </li>
+                </ul>
+                <figure class="figure" data-caption="Dealer / Quote · imported catalogs card grid">
+                    <img src="img/tab-dealer-quote.png" alt="Dealer / Quote tab · imported catalogs card grid." loading="lazy">
                 </figure>
             </article>
 
@@ -306,39 +234,27 @@
                     <span class="ref-panel-title">Figma · Original storefront design</span>
                     <span class="chip chip--reference">Reference</span>
                 </header>
-                <div class="bilingual">
-                    <div lang="en">
-                        <p>
-                            The original storefront design from Figma. A twelve-product
-                            curated assortment, a clean sidebar with four filter dimensions
-                            (Category, Brand, Features, Price), seven sort options and a
-                            quote-builder flow embedded in each product's detail modal.
-                        </p>
-                        <p><strong>What we kept from it:</strong></p>
-                        <ul>
-                            <li>The clean sidebar-with-filters layout, adopted as the base grid.</li>
-                            <li>Visible SKU + colorway swatches on every card.</li>
-                            <li>The multi-line quote builder pattern inside the product modal.</li>
-                        </ul>
-                    </div>
-                    <div lang="es">
-                        <p>
-                            El diseño original de storefront desde Figma. Una selección
-                            curada de doce productos, un sidebar limpio con cuatro
-                            dimensiones de filtro (Categoría, Marca, Features, Precio),
-                            siete opciones de sort y un flujo de armado de cotización
-                            embebido en el modal de detalle de cada producto.
-                        </p>
-                        <p><strong>Qué conservamos:</strong></p>
-                        <ul>
-                            <li>El layout limpio de sidebar con filtros, adoptado como base del grid.</li>
-                            <li>SKU visible y muestras de color en cada tarjeta.</li>
-                            <li>El patrón de armado de cotización multi-línea dentro del modal.</li>
-                        </ul>
-                    </div>
-                </div>
-                <figure class="ref-panel-figure">
-                    <img src="img/tab-figma.png" alt="Figma tab · storefront grid with filter sidebar and brand pills.">
+                <p>
+                    <span lang="en">The original storefront design from Figma. A twelve-product curated assortment, a clean sidebar with four filter dimensions (Category, Brand, Features, Price), seven sort options and a quote-builder flow embedded in each product's detail modal.</span>
+                    <span lang="es">El diseño original de storefront desde Figma. Una selección curada de doce productos, un sidebar limpio con cuatro dimensiones de filtro (Categoría, Marca, Features, Precio), siete opciones de sort y un flujo de armado de cotización embebido en el modal de detalle de cada producto.</span>
+                </p>
+                <p><strong><span lang="en">What we kept from it:</span><span lang="es">Qué conservamos:</span></strong></p>
+                <ul>
+                    <li>
+                        <span lang="en">The clean sidebar-with-filters layout, adopted as the base grid.</span>
+                        <span lang="es">El layout limpio de sidebar con filtros, adoptado como base del grid.</span>
+                    </li>
+                    <li>
+                        <span lang="en">Visible SKU and colorway swatches on every card.</span>
+                        <span lang="es">SKU visible y muestras de color en cada tarjeta.</span>
+                    </li>
+                    <li>
+                        <span lang="en">The multi-line quote builder pattern inside the product modal.</span>
+                        <span lang="es">El patrón de armado de cotización multi-línea dentro del modal.</span>
+                    </li>
+                </ul>
+                <figure class="figure" data-caption="Figma · storefront grid with filter sidebar">
+                    <img src="img/tab-figma.png" alt="Figma tab · storefront grid with filter sidebar and brand pills." loading="lazy">
                 </figure>
             </article>
         </section>
@@ -348,28 +264,14 @@
              ═════════════════════════════════════════════════════════════ -->
         <section class="section" aria-labelledby="s5-title">
             <h2 id="s5-title" class="section-title">
-                The current version · Product Catalog + My Selection
-                <span class="section-title-alt">/ La versión actual</span>
+                <span lang="en">The current version · Product Catalog + My Selection</span>
+                <span lang="es">La versión actual · Product Catalog + My Selection</span>
             </h2>
 
-            <div class="bilingual" style="margin-bottom: 2rem;">
-                <div lang="en">
-                    <p class="section-lede">
-                        Two tabs carry the day-to-day work. Product Catalog unites what
-                        the reference tabs taught us and adds three new capabilities.
-                        My Selection is the live workspace where selections turn into
-                        submitted quotes.
-                    </p>
-                </div>
-                <div lang="es">
-                    <p class="section-lede">
-                        Dos tabs cargan el trabajo del día a día. Product Catalog reúne
-                        lo que los tabs de referencia enseñaron y suma tres capacidades
-                        nuevas. My Selection es el workspace vivo donde las selecciones
-                        se convierten en cotizaciones enviadas.
-                    </p>
-                </div>
-            </div>
+            <p class="section-lede">
+                <span lang="en">Two tabs carry the day-to-day work. Product Catalog unites what the reference tabs taught us and adds three new capabilities. My Selection is the live workspace where selections turn into submitted quotes.</span>
+                <span lang="es">Dos tabs cargan el trabajo del día a día. Product Catalog reúne lo que los tabs de referencia enseñaron y suma tres capacidades nuevas. My Selection es el workspace vivo donde las selecciones se convierten en cotizaciones enviadas.</span>
+            </p>
 
             <!-- Product Catalog -->
             <article class="ref-panel">
@@ -377,49 +279,35 @@
                     <span class="ref-panel-title">Product Catalog · Unified storefront</span>
                     <span class="chip chip--current">Current version</span>
                 </header>
-                <div class="bilingual">
-                    <div lang="en">
-                        <p>
-                            One search bar, one grid, three views the dealer can switch on
-                            the fly: <strong>Products</strong>, <strong>Materials</strong>
-                            and <strong>Spaces</strong>. Spaces is the new one — six space
-                            types (Focus Room, Work Café, Huddle Room, Meeting Room, Phone
-                            Booth, Collaboration Lab) and fifteen pre-configured settings
-                            ready to add to a quote in one click.
-                        </p>
-                        <p><strong>What's new here (not in the reference tabs):</strong></p>
-                        <ul>
-                            <li>Spaces mode with pre-configured bundles per workplace scenario.</li>
-                            <li>Custom Spaces — a dealer can build their own, scoped to their tenant.</li>
-                            <li>Configurable options and finishes aligned to the production data schema.</li>
-                            <li>Multi-tenant scoping — each dealer sees only their own custom catalogs.</li>
-                        </ul>
-                    </div>
-                    <div lang="es">
-                        <p>
-                            Una sola barra de búsqueda, una sola grilla, tres vistas que
-                            el dealer alterna al momento: <strong>Productos</strong>,
-                            <strong>Materiales</strong> y <strong>Espacios</strong>.
-                            Espacios es la novedad — seis tipos de espacio (Focus Room,
-                            Work Café, Huddle Room, Meeting Room, Phone Booth,
-                            Collaboration Lab) y quince configuraciones pre-armadas, listas
-                            para añadirse a una cotización en un click.
-                        </p>
-                        <p><strong>Qué hay de nuevo aquí (que no está en los tabs de referencia):</strong></p>
-                        <ul>
-                            <li>Modo Espacios con bundles pre-configurados por escenario.</li>
-                            <li>Espacios personalizados — el dealer arma los suyos, atados a su tenant.</li>
-                            <li>Opciones y acabados configurables, alineados al esquema de producción.</li>
-                            <li>Alcance multi-tenant — cada dealer ve solo sus catálogos personalizados.</li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="tab-grid" style="grid-template-columns: 1fr 1fr; margin-top: 1rem;">
-                    <figure class="figure">
-                        <img src="img/tab-product-catalog-products.png" alt="Product Catalog · Products view with sidebar filters.">
+                <p>
+                    <span lang="en">One search bar, one grid, three views the dealer can switch on the fly: <strong>Products</strong>, <strong>Materials</strong> and <strong>Spaces</strong>. Spaces is the new one — six space types (Focus Room, Work Café, Huddle Room, Meeting Room, Phone Booth, Collaboration Lab) and fifteen pre-configured settings ready to add to a quote in one click.</span>
+                    <span lang="es">Una sola barra de búsqueda, una sola grilla, tres vistas que el dealer alterna al momento: <strong>Productos</strong>, <strong>Materiales</strong> y <strong>Espacios</strong>. Espacios es la novedad — seis tipos de espacio (Focus Room, Work Café, Huddle Room, Meeting Room, Phone Booth, Collaboration Lab) y quince configuraciones pre-armadas, listas para añadirse a una cotización en un click.</span>
+                </p>
+                <p><strong><span lang="en">What's new here (not in the reference tabs):</span><span lang="es">Qué hay de nuevo aquí (que no está en los tabs de referencia):</span></strong></p>
+                <ul>
+                    <li>
+                        <span lang="en">Spaces mode with pre-configured bundles per workplace scenario.</span>
+                        <span lang="es">Modo Espacios con bundles pre-configurados por escenario.</span>
+                    </li>
+                    <li>
+                        <span lang="en">Custom Spaces — a dealer can build their own, scoped to their tenant.</span>
+                        <span lang="es">Espacios personalizados — el dealer arma los suyos, atados a su tenant.</span>
+                    </li>
+                    <li>
+                        <span lang="en">Configurable options and finishes aligned to the production data schema.</span>
+                        <span lang="es">Opciones y acabados configurables, alineados al esquema de producción.</span>
+                    </li>
+                    <li>
+                        <span lang="en">Multi-tenant scoping — each dealer sees only their own custom catalogs.</span>
+                        <span lang="es">Alcance multi-tenant — cada dealer ve solo sus catálogos personalizados.</span>
+                    </li>
+                </ul>
+                <div class="figure-pair">
+                    <figure class="figure" data-caption="Product Catalog · Products view">
+                        <img src="img/tab-product-catalog-products.png" alt="Product Catalog · Products view with sidebar filters." loading="lazy">
                     </figure>
-                    <figure class="figure">
-                        <img src="img/tab-product-catalog-spaces.png" alt="Product Catalog · Spaces view with pre-configured space types.">
+                    <figure class="figure" data-caption="Product Catalog · Spaces view">
+                        <img src="img/tab-product-catalog-spaces.png" alt="Product Catalog · Spaces view with pre-configured space types." loading="lazy">
                     </figure>
                 </div>
             </article>
@@ -430,45 +318,31 @@
                     <span class="ref-panel-title">My Selection · Quote drafts</span>
                     <span class="chip chip--current">Current version</span>
                 </header>
-                <div class="bilingual">
-                    <div lang="en">
-                        <p>
-                            The live workspace. Multiple parallel drafts per dealer, each
-                            with buyer information auto-filled from the tenant profile.
-                            Line items can be viewed flat or grouped by the space setting
-                            they came from. Submitting generates a reference number of the
-                            form <code>Q-YYYY-NNN-TENANT</code>. Everything persists
-                            per tenant so a browser refresh never loses work.
-                        </p>
-                        <p><strong>What it delivers:</strong></p>
-                        <ul>
-                            <li>Multiple drafts running in parallel per dealer.</li>
-                            <li>Buyer info auto-filled from user + tenant profile.</li>
-                            <li>Flat / By space setting view toggle.</li>
-                            <li>Reference number on submit; submitted quotes archived.</li>
-                        </ul>
-                    </div>
-                    <div lang="es">
-                        <p>
-                            El workspace vivo. Varios borradores paralelos por dealer,
-                            cada uno con la información del comprador auto-completada desde
-                            el perfil del tenant. Los ítems se pueden ver planos o
-                            agrupados por el espacio del que vinieron. Al enviar se genera
-                            un número de referencia con el formato <code>Q-YYYY-NNN-TENANT</code>.
-                            Todo se persiste por tenant — un refresh del navegador
-                            nunca pierde el trabajo.
-                        </p>
-                        <p><strong>Qué entrega:</strong></p>
-                        <ul>
-                            <li>Múltiples borradores paralelos por dealer.</li>
-                            <li>Información del comprador auto-completada (usuario + tenant).</li>
-                            <li>Toggle de vista Plana / Por espacio.</li>
-                            <li>Número de referencia al enviar; cotizaciones enviadas archivadas.</li>
-                        </ul>
-                    </div>
-                </div>
-                <figure class="ref-panel-figure">
-                    <img src="img/tab-my-selection.png" alt="My Selection tab · drafts list on the left and line-item detail on the right.">
+                <p>
+                    <span lang="en">The live workspace. Multiple parallel drafts per dealer, each with buyer information auto-filled from the tenant profile. Line items can be viewed flat or grouped by the space setting they came from. Submitting generates a reference number of the form <code>Q-YYYY-NNN-TENANT</code>. Everything persists per tenant so a browser refresh never loses work.</span>
+                    <span lang="es">El workspace vivo. Varios borradores paralelos por dealer, cada uno con la información del comprador auto-completada desde el perfil del tenant. Los ítems se pueden ver planos o agrupados por el espacio del que vinieron. Al enviar se genera un número de referencia con el formato <code>Q-YYYY-NNN-TENANT</code>. Todo se persiste por tenant — un refresh del navegador nunca pierde el trabajo.</span>
+                </p>
+                <p><strong><span lang="en">What it delivers:</span><span lang="es">Qué entrega:</span></strong></p>
+                <ul>
+                    <li>
+                        <span lang="en">Multiple drafts running in parallel per dealer.</span>
+                        <span lang="es">Múltiples borradores paralelos por dealer.</span>
+                    </li>
+                    <li>
+                        <span lang="en">Buyer info auto-filled from user + tenant profile.</span>
+                        <span lang="es">Información del comprador auto-completada (usuario + tenant).</span>
+                    </li>
+                    <li>
+                        <span lang="en">Flat / By space setting view toggle.</span>
+                        <span lang="es">Toggle de vista Plana / Por espacio.</span>
+                    </li>
+                    <li>
+                        <span lang="en">Reference number on submit; submitted quotes archived.</span>
+                        <span lang="es">Número de referencia al enviar; cotizaciones enviadas archivadas.</span>
+                    </li>
+                </ul>
+                <figure class="figure" data-caption="My Selection · drafts and line-item detail">
+                    <img src="img/tab-my-selection.png" alt="My Selection tab · drafts list on the left, line-item detail on the right." loading="lazy">
                 </figure>
             </article>
         </section>
@@ -478,80 +352,79 @@
              ═════════════════════════════════════════════════════════════ -->
         <section class="section" aria-labelledby="s6-title">
             <h2 id="s6-title" class="section-title">
-                What a Dealer gets out of this
-                <span class="section-title-alt">/ Qué gana el Dealer con esto</span>
+                <span lang="en">What a Dealer gets out of this</span>
+                <span lang="es">Qué gana el Dealer con esto</span>
             </h2>
 
-            <div class="bilingual" style="margin-bottom: 1.5rem;">
-                <div lang="en">
-                    <p class="section-lede">
-                        Every capability answers a specific question a sales rep gets asked
-                        weekly — "did we already quote this?", "can you send me the same
-                        setup we did for the last client?", "did the vendor update the price?".
-                    </p>
-                </div>
-                <div lang="es">
-                    <p class="section-lede">
-                        Cada capacidad responde a una pregunta específica que un vendedor
-                        recibe cada semana — "¿ya cotizamos esto?", "¿me pasás el mismo
-                        armado que hicimos para el cliente anterior?", "¿el proveedor
-                        actualizó el precio?".
-                    </p>
-                </div>
-            </div>
+            <p class="section-lede">
+                <span lang="en">Every capability answers a specific question a sales rep gets asked weekly — "did we already quote this?", "can you send me the same setup we did for the last client?", "did the vendor update the price?".</span>
+                <span lang="es">Cada capacidad responde a una pregunta específica que un vendedor recibe cada semana — "¿ya cotizamos esto?", "¿me pasás el mismo armado que hicimos para el cliente anterior?", "¿el proveedor actualizó el precio?".</span>
+            </p>
 
             <div class="value-grid">
                 <article class="value-card">
-                    <div class="value-card-title">One place to search</div>
+                    <div class="value-card-title">
+                        <span lang="en">One place to search</span>
+                        <span lang="es">Un solo lugar para buscar</span>
+                    </div>
                     <p class="value-card-body">
-                        Products, materials and spaces under one bar. No more jumping between vendor PDFs.
-                        <br><br>
-                        Un solo lugar para buscar productos, materiales y espacios. Se acaba el salto entre PDFs.
+                        <span lang="en">Products, materials and spaces under one bar. No more jumping between vendor PDFs.</span>
+                        <span lang="es">Productos, materiales y espacios bajo una sola barra. Se acaba el salto entre PDFs.</span>
                     </p>
                 </article>
 
                 <article class="value-card">
-                    <div class="value-card-title">Persistent multi-draft quotes</div>
+                    <div class="value-card-title">
+                        <span lang="en">Persistent multi-draft quotes</span>
+                        <span lang="es">Cotizaciones multi-borrador persistentes</span>
+                    </div>
                     <p class="value-card-body">
-                        Multiple quotes in progress at once, saved per dealer, survive browser refresh.
-                        <br><br>
-                        Varias cotizaciones en paralelo, guardadas por dealer, sobreviven al refresh.
+                        <span lang="en">Multiple quotes in progress at once, saved per dealer, survive browser refresh.</span>
+                        <span lang="es">Varias cotizaciones en paralelo, guardadas por dealer, sobreviven al refresh.</span>
                     </p>
                 </article>
 
                 <article class="value-card">
-                    <div class="value-card-title">Reusable Custom Spaces</div>
+                    <div class="value-card-title">
+                        <span lang="en">Reusable Custom Spaces</span>
+                        <span lang="es">Espacios personalizados reusables</span>
+                    </div>
                     <p class="value-card-body">
-                        Build a setup once, reuse it across clients. Scoped to the dealer — never leaks between tenants.
-                        <br><br>
-                        Armar una configuración una vez y reutilizarla entre clientes. Aislada por dealer.
+                        <span lang="en">Build a setup once, reuse it across clients. Scoped to the dealer — never leaks between tenants.</span>
+                        <span lang="es">Armar una configuración una vez y reutilizarla entre clientes. Aislada por dealer.</span>
                     </p>
                 </article>
 
                 <article class="value-card">
-                    <div class="value-card-title">Multi-tenant isolation</div>
+                    <div class="value-card-title">
+                        <span lang="en">Multi-tenant isolation</span>
+                        <span lang="es">Aislamiento multi-tenant</span>
+                    </div>
                     <p class="value-card-body">
-                        Each dealer sees only their catalogs, spaces and quote drafts. Nothing crosses.
-                        <br><br>
-                        Cada dealer ve solo sus catálogos, espacios y borradores. Nada se cruza.
+                        <span lang="en">Each dealer sees only their catalogs, spaces and quote drafts. Nothing crosses.</span>
+                        <span lang="es">Cada dealer ve solo sus catálogos, espacios y borradores. Nada se cruza.</span>
                     </p>
                 </article>
 
                 <article class="value-card">
-                    <div class="value-card-title">Quote / PO ingest</div>
+                    <div class="value-card-title">
+                        <span lang="en">Quote / PO ingest</span>
+                        <span lang="es">Ingesta de cotización / PO</span>
+                    </div>
                     <p class="value-card-body">
-                        Upload a PDF or purchase order — matched automatically to catalog products, human review at the end.
-                        <br><br>
-                        Se sube un PDF o PO — se matchea automáticamente a productos del catálogo, con revisión humana al final.
+                        <span lang="en">Upload a PDF or purchase order — matched automatically to catalog products, human review at the end.</span>
+                        <span lang="es">Se sube un PDF o PO — se matchea automáticamente a productos del catálogo, con revisión humana al final.</span>
                     </p>
                 </article>
 
                 <article class="value-card">
-                    <div class="value-card-title">"Previously quoted" history</div>
+                    <div class="value-card-title">
+                        <span lang="en">"Previously quoted" history</span>
+                        <span lang="es">Historial de "ya cotizado"</span>
+                    </div>
                     <p class="value-card-body">
-                        A subtle badge tells the rep which products they've already sent to someone else — great signal for what's working.
-                        <br><br>
-                        Un badge sutil le dice al vendedor qué productos ya envió antes — buena señal de qué funciona.
+                        <span lang="en">A subtle badge tells the rep which products they've already sent to someone else — great signal for what's working.</span>
+                        <span lang="es">Un badge sutil le dice al vendedor qué productos ya envió antes — buena señal de qué funciona.</span>
                     </p>
                 </article>
             </div>
@@ -562,62 +435,64 @@
              ═════════════════════════════════════════════════════════════ -->
         <section class="section" aria-labelledby="s7-title">
             <h2 id="s7-title" class="section-title">
-                Try it in five steps
-                <span class="section-title-alt">/ Probalo en cinco pasos</span>
+                <span lang="en">Try it in five steps</span>
+                <span lang="es">Probalo en cinco pasos</span>
             </h2>
 
-            <div class="bilingual" style="margin-bottom: 1.5rem;">
-                <div lang="en">
-                    <p class="section-lede">
-                        A two-minute path anyone can follow — from picking a demo tenant
-                        to receiving a real reference number.
-                    </p>
-                </div>
-                <div lang="es">
-                    <p class="section-lede">
-                        Un recorrido de dos minutos que cualquiera puede seguir — desde
-                        elegir un tenant demo hasta recibir un número de referencia real.
-                    </p>
-                </div>
-            </div>
+            <p class="section-lede">
+                <span lang="en">A two-minute path anyone can follow — from picking a demo tenant to receiving a real reference number.</span>
+                <span lang="es">Un recorrido de dos minutos que cualquiera puede seguir — desde elegir un tenant demo hasta recibir un número de referencia real.</span>
+            </p>
 
             <ol class="steps">
                 <li class="step">
-                    <strong>Pick a demo tenant · Elegí un tenant demo</strong>
+                    <strong>
+                        <span lang="en">Pick a demo tenant</span>
+                        <span lang="es">Elegí un tenant demo</span>
+                    </strong>
                     <p class="step-body">
-                        Top-left of the app. Five options — Dealer 1, Meridian Office,
-                        Strata, Apex Interiors, ClearSpace Design. Each has its own catalogs
-                        and quote drafts.
+                        <span lang="en">Top-left of the app. Five options — Dealer 1, Meridian Office, Strata, Apex Interiors, ClearSpace Design. Each has its own catalogs and quote drafts.</span>
+                        <span lang="es">Arriba a la izquierda. Cinco opciones — Dealer 1, Meridian Office, Strata, Apex Interiors, ClearSpace Design. Cada uno tiene sus propios catálogos y borradores.</span>
                     </p>
                 </li>
                 <li class="step">
-                    <strong>Open Product Catalog → Spaces · Abrí Product Catalog → Espacios</strong>
+                    <strong>
+                        <span lang="en">Open Product Catalog → Spaces</span>
+                        <span lang="es">Abrí Product Catalog → Espacios</span>
+                    </strong>
                     <p class="step-body">
-                        The three-way toggle on the top-right of Product Catalog. Switch to
-                        Spaces to see the six pre-configured space types.
+                        <span lang="en">The three-way toggle in the top-right of Product Catalog. Switch to Spaces to see the six pre-configured space types.</span>
+                        <span lang="es">El toggle de tres vías arriba a la derecha de Product Catalog. Cambiá a Espacios para ver los seis tipos pre-configurados.</span>
                     </p>
                 </li>
                 <li class="step">
-                    <strong>Add a Space Setting to Selection · Añadí un espacio a la selección</strong>
+                    <strong>
+                        <span lang="en">Add a Space Setting to Selection</span>
+                        <span lang="es">Añadí un espacio a la selección</span>
+                    </strong>
                     <p class="step-body">
-                        Pick a space (for example Work Café). Open one of its settings.
-                        Use "Add all to Selection" — every item in the bundle drops into
-                        the active draft at once.
+                        <span lang="en">Pick a space (for example Work Café). Open one of its settings. Use "Add all to Selection" — every item in the bundle drops into the active draft at once.</span>
+                        <span lang="es">Elegí un espacio (por ejemplo Work Café). Abrí una de sus configuraciones. Usá "Add all to Selection" — todos los ítems del bundle caen en el borrador activo de una vez.</span>
                     </p>
                 </li>
                 <li class="step">
-                    <strong>Open My Selection · Abrí My Selection</strong>
+                    <strong>
+                        <span lang="en">Open My Selection</span>
+                        <span lang="es">Abrí My Selection</span>
+                    </strong>
                     <p class="step-body">
-                        Adjust quantities, swap colorways / finishes / fabrics. Toggle the
-                        line-item view between flat and grouped by space setting to check
-                        the shape of the quote.
+                        <span lang="en">Adjust quantities, swap colorways / finishes / fabrics. Toggle the line-item view between flat and grouped by space setting to check the shape of the quote.</span>
+                        <span lang="es">Ajustá cantidades, cambiá colorways / acabados / telas. Alterná la vista de ítems entre plana y agrupada por espacio para ver la forma de la cotización.</span>
                     </p>
                 </li>
                 <li class="step">
-                    <strong>Submit · Enviá</strong>
+                    <strong>
+                        <span lang="en">Submit</span>
+                        <span lang="es">Enviá</span>
+                    </strong>
                     <p class="step-body">
-                        Confirm buyer info (already auto-filled from the tenant), submit,
-                        and receive a reference number of the form <code>Q-YYYY-NNN-TENANT</code>.
+                        <span lang="en">Confirm buyer info (already auto-filled from the tenant), submit, and receive a reference number of the form <code>Q-YYYY-NNN-TENANT</code>.</span>
+                        <span lang="es">Confirmá la info del comprador (ya auto-completada desde el tenant), enviá, y recibí un número de referencia con el formato <code>Q-YYYY-NNN-TENANT</code>.</span>
                     </p>
                 </li>
             </ol>
@@ -628,49 +503,57 @@
              ═════════════════════════════════════════════════════════════ -->
         <section class="section" aria-labelledby="s8-title">
             <h2 id="s8-title" class="section-title">
-                Fact sheet
-                <span class="section-title-alt">/ Ficha rápida</span>
+                <span lang="en">Fact sheet</span>
+                <span lang="es">Ficha rápida</span>
             </h2>
 
-            <div class="bilingual" style="margin-bottom: 1.5rem;">
-                <div lang="en">
-                    <p class="section-lede">
-                        Numbers from the current demo — the seed data reflects the shape
-                        of a real dealer deployment.
-                    </p>
-                </div>
-                <div lang="es">
-                    <p class="section-lede">
-                        Números del demo actual — la data seed refleja la forma de un
-                        despliegue real de dealer.
-                    </p>
-                </div>
-            </div>
+            <p class="section-lede">
+                <span lang="en">Numbers from the current demo — the seed data reflects the shape of a real dealer deployment.</span>
+                <span lang="es">Números del demo actual — la data seed refleja la forma de un despliegue real de dealer.</span>
+            </p>
 
             <div class="kpi-grid">
                 <div class="kpi">
                     <div class="kpi-value">7</div>
-                    <div class="kpi-label">Brands · Marcas</div>
+                    <div class="kpi-label">
+                        <span lang="en">Brands</span>
+                        <span lang="es">Marcas</span>
+                    </div>
                 </div>
                 <div class="kpi">
                     <div class="kpi-value">300+</div>
-                    <div class="kpi-label">Unified products · Productos unificados</div>
+                    <div class="kpi-label">
+                        <span lang="en">Unified products</span>
+                        <span lang="es">Productos unificados</span>
+                    </div>
                 </div>
                 <div class="kpi">
                     <div class="kpi-value">6</div>
-                    <div class="kpi-label">Space types · Tipos de espacio</div>
+                    <div class="kpi-label">
+                        <span lang="en">Space types</span>
+                        <span lang="es">Tipos de espacio</span>
+                    </div>
                 </div>
                 <div class="kpi">
                     <div class="kpi-value">15</div>
-                    <div class="kpi-label">Pre-configured settings · Espacios pre-armados</div>
+                    <div class="kpi-label">
+                        <span lang="en">Pre-configured settings</span>
+                        <span lang="es">Espacios pre-armados</span>
+                    </div>
                 </div>
                 <div class="kpi">
                     <div class="kpi-value">5</div>
-                    <div class="kpi-label">Demo tenants · Tenants demo</div>
+                    <div class="kpi-label">
+                        <span lang="en">Demo tenants</span>
+                        <span lang="es">Tenants demo</span>
+                    </div>
                 </div>
                 <div class="kpi">
                     <div class="kpi-value" style="font-size: 1.15rem;">Q-YYYY-NNN-TENANT</div>
-                    <div class="kpi-label">Quote reference format · Formato de referencia</div>
+                    <div class="kpi-label">
+                        <span lang="en">Quote reference format</span>
+                        <span lang="es">Formato de referencia</span>
+                    </div>
                 </div>
             </div>
         </section>
@@ -679,12 +562,57 @@
 
     <footer class="footer">
         <p>
-            Strata · Product Catalog Brief
+            <span lang="en">Strata · Product Catalog Brief</span>
+            <span lang="es">Strata · Resumen del Product Catalog</span>
             <br>
-            <a href="https://github.com/diegoagentic/expert-catalog">Prototype repo</a>
-            <a href="https://github.com/diegoagentic/strata-catalog-brief">This brief</a>
+            <a href="https://github.com/diegoagentic/expert-catalog">
+                <span lang="en">Prototype repo</span>
+                <span lang="es">Repo del prototipo</span>
+            </a>
+            <a href="https://github.com/diegoagentic/strata-catalog-brief">
+                <span lang="en">This brief</span>
+                <span lang="es">Este brief</span>
+            </a>
             <a href="https://strata-ds.vercel.app">Strata Design System</a>
         </p>
     </footer>
+
+    <script>
+        (function () {
+            var STORAGE_KEY = 'strata-brief-lang';
+            var body = document.body;
+            var html = document.documentElement;
+            var buttons = document.querySelectorAll('.lang-toggle button');
+
+            function applyLang(lang) {
+                if (lang !== 'en' && lang !== 'es') lang = 'en';
+                body.setAttribute('data-lang', lang);
+                html.setAttribute('lang', lang);
+                try { localStorage.setItem(STORAGE_KEY, lang); } catch (e) { /* private mode */ }
+            }
+
+            // Initial state · saved pref or default 'en'
+            var saved = null;
+            try { saved = localStorage.getItem(STORAGE_KEY); } catch (e) { /* private mode */ }
+            applyLang(saved || 'en');
+
+            buttons.forEach(function (btn) {
+                btn.addEventListener('click', function () {
+                    applyLang(btn.getAttribute('data-set'));
+                });
+            });
+
+            // Hide broken screenshots so the figure placeholder stays visible.
+            document.querySelectorAll('.figure img').forEach(function (img) {
+                img.addEventListener('error', function () {
+                    img.style.display = 'none';
+                });
+                // If already loaded but src is empty / 404-ed before listener attached
+                if (img.complete && img.naturalWidth === 0) {
+                    img.style.display = 'none';
+                }
+            });
+        })();
+    </script>
 </body>
 </html>
