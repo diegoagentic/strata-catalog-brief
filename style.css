@@ -1,0 +1,585 @@
+/* ==========================================================================
+   Strata Catalog Brief · style.css
+   Tokens sourced verbatim from Strata Design System
+   (Strata Design System/strata-ds/src/styles/tokens/variables.css)
+   ========================================================================== */
+
+/* ── Light tokens (default) ─────────────────────────────────────────────── */
+:root {
+    --background: #EBECEE;
+    --foreground: #02060C;
+    --card: #fafafa;
+    --card-foreground: #02060C;
+    --muted: #fafafa;
+    --muted-foreground: #959DA7;
+    --border: #D0D4D8;
+    --primary: #E6F993;
+    --primary-foreground: #02060C;
+    --brand-lime: #d6ff3c;
+    --brand-100: #F4F8E1;
+    --brand-700: #718B03;
+
+    --radius-md: 0.5rem;
+    --radius-lg: 0.75rem;
+    --radius-xl: 1rem;
+    --radius-full: 9999px;
+
+    --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+    --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+
+    --font-brand: 'PP Monument Extended', 'Inter', system-ui, -apple-system, sans-serif;
+    --font-sans: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+
+    --space-2: 0.5rem;
+    --space-3: 0.75rem;
+    --space-4: 1rem;
+    --space-6: 1.5rem;
+    --space-8: 2rem;
+    --space-12: 3rem;
+    --space-16: 4rem;
+}
+
+/* ── Dark tokens (auto via OS preference) ───────────────────────────────── */
+@media (prefers-color-scheme: dark) {
+    :root {
+        --background: #02060C;
+        --foreground: #EBECEE;
+        --card: #0B0F1A;
+        --card-foreground: #EBECEE;
+        --muted: #141E2C;
+        --muted-foreground: #B4BBC2;
+        --border: #141E2C;
+        --primary: #C3E433;
+        --primary-foreground: #02060C;
+        --brand-100: #2A3400;
+        --brand-700: #DAF75F;
+    }
+}
+
+/* ── Base reset + typography ────────────────────────────────────────────── */
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+html {
+    font-family: var(--font-sans);
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+    margin: 0;
+    background: var(--background);
+    color: var(--foreground);
+    font-size: 1rem;
+}
+
+h1, h2, h3, h4 {
+    font-family: var(--font-brand);
+    letter-spacing: -0.02em;
+    line-height: 1.15;
+    margin: 0;
+}
+
+p {
+    margin: 0 0 var(--space-3);
+    color: var(--foreground);
+}
+
+ul {
+    margin: 0 0 var(--space-3);
+    padding-left: 1.2rem;
+}
+
+li {
+    margin-bottom: var(--space-2);
+}
+
+a {
+    color: var(--foreground);
+    text-decoration: underline;
+    text-underline-offset: 2px;
+}
+
+a:hover {
+    color: var(--brand-700);
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* ── Layout shell ───────────────────────────────────────────────────────── */
+.page {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: var(--space-8) var(--space-4);
+    display: grid;
+    gap: var(--space-6);
+}
+
+@media (min-width: 768px) {
+    .page {
+        padding: var(--space-12) var(--space-8);
+        gap: var(--space-8);
+    }
+}
+
+/* ── Section container ──────────────────────────────────────────────────── */
+.section {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-xl);
+    padding: var(--space-6);
+}
+
+@media (min-width: 768px) {
+    .section {
+        padding: var(--space-8);
+    }
+}
+
+.section-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--foreground);
+    margin-bottom: var(--space-4);
+    display: flex;
+    align-items: baseline;
+    flex-wrap: wrap;
+    gap: var(--space-2);
+}
+
+@media (min-width: 768px) {
+    .section-title {
+        font-size: 1.875rem;
+    }
+}
+
+.section-title-alt {
+    font-family: var(--font-sans);
+    font-size: 0.9em;
+    font-weight: 400;
+    color: var(--muted-foreground);
+    letter-spacing: 0;
+}
+
+.section-lede {
+    color: var(--muted-foreground);
+    font-size: 0.95rem;
+    margin-bottom: var(--space-6);
+    max-width: 65ch;
+}
+
+/* ── Bilingual grid (EN | ES) ───────────────────────────────────────────── */
+.bilingual {
+    display: grid;
+    gap: var(--space-6);
+}
+
+@media (min-width: 1024px) {
+    .bilingual {
+        grid-template-columns: 1fr 1fr;
+        gap: var(--space-8);
+    }
+
+    .bilingual > [lang="es"] {
+        border-left: 1px solid var(--border);
+        padding-left: var(--space-8);
+    }
+}
+
+.bilingual [lang]::before {
+    content: attr(lang);
+    text-transform: uppercase;
+    font-size: 0.65rem;
+    font-weight: 700;
+    letter-spacing: 0.15em;
+    color: var(--muted-foreground);
+    display: block;
+    margin-bottom: var(--space-3);
+}
+
+/* ── Hero ───────────────────────────────────────────────────────────────── */
+.hero {
+    background:
+        radial-gradient(at top left, rgba(230, 249, 147, 0.35), transparent 40%),
+        radial-gradient(at bottom right, rgba(214, 255, 60, 0.15), transparent 45%),
+        var(--card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-xl);
+    padding: var(--space-8) var(--space-6);
+    text-align: left;
+}
+
+@media (min-width: 768px) {
+    .hero {
+        padding: var(--space-16) var(--space-12);
+    }
+}
+
+@media (prefers-color-scheme: dark) {
+    .hero {
+        background:
+            radial-gradient(at top left, rgba(195, 228, 51, 0.15), transparent 40%),
+            radial-gradient(at bottom right, rgba(214, 255, 60, 0.08), transparent 45%),
+            var(--card);
+    }
+}
+
+.hero-eyebrow {
+    display: inline-block;
+    font-size: 0.7rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--muted-foreground);
+    font-weight: 700;
+    margin-bottom: var(--space-3);
+}
+
+.hero-title {
+    font-size: 2rem;
+    font-weight: 800;
+    line-height: 1.05;
+    max-width: 18ch;
+    margin-bottom: var(--space-4);
+}
+
+@media (min-width: 768px) {
+    .hero-title {
+        font-size: 3rem;
+    }
+}
+
+.hero-subtitle {
+    font-size: 1.05rem;
+    color: var(--muted-foreground);
+    max-width: 55ch;
+    margin-bottom: var(--space-6);
+}
+
+@media (min-width: 768px) {
+    .hero-subtitle {
+        font-size: 1.15rem;
+    }
+}
+
+/* ── Chips (role markers) ───────────────────────────────────────────────── */
+.chip {
+    display: inline-block;
+    padding: 0.15rem 0.55rem;
+    border-radius: var(--radius-full);
+    font-size: 0.65rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    border: 1px solid transparent;
+    white-space: nowrap;
+    vertical-align: middle;
+}
+
+.chip--reference {
+    background: var(--muted);
+    color: var(--muted-foreground);
+    border-color: var(--border);
+}
+
+.chip--current {
+    background: var(--primary);
+    color: var(--primary-foreground);
+    border-color: var(--primary);
+}
+
+/* ── Tab cards grid (section 3) ─────────────────────────────────────────── */
+.tab-grid {
+    display: grid;
+    gap: var(--space-4);
+    grid-template-columns: 1fr;
+}
+
+@media (min-width: 640px) {
+    .tab-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (min-width: 1024px) {
+    .tab-grid { grid-template-columns: repeat(5, 1fr); }
+}
+
+.tab-card {
+    background: var(--background);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    padding: var(--space-4);
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-3);
+}
+
+.tab-card-head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--space-2);
+}
+
+.tab-card-title {
+    font-family: var(--font-brand);
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: var(--foreground);
+}
+
+.tab-card-body {
+    font-size: 0.85rem;
+    color: var(--muted-foreground);
+    margin: 0;
+}
+
+/* ── Reference tabs section (4) · stacked mini-panels ───────────────────── */
+.ref-panel {
+    background: var(--background);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    padding: var(--space-6);
+    margin-bottom: var(--space-4);
+}
+
+.ref-panel:last-child {
+    margin-bottom: 0;
+}
+
+.ref-panel-head {
+    display: flex;
+    align-items: center;
+    gap: var(--space-3);
+    margin-bottom: var(--space-4);
+    flex-wrap: wrap;
+}
+
+.ref-panel-title {
+    font-family: var(--font-brand);
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: var(--foreground);
+}
+
+.ref-panel-figure {
+    margin: var(--space-4) 0 0;
+    border: 1px solid var(--border);
+    border-radius: var(--radius-md);
+    overflow: hidden;
+    background: var(--muted);
+}
+
+.ref-panel-figure img,
+.figure img {
+    display: block;
+    width: 100%;
+    min-height: 220px;
+    object-fit: cover;
+    background: var(--muted);
+}
+
+/* Figure placeholder · shown when img has no src or fails */
+.figure {
+    background: var(--muted);
+    border: 1px dashed var(--border);
+    border-radius: var(--radius-md);
+    min-height: 260px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: var(--space-4);
+    color: var(--muted-foreground);
+    font-size: 0.85rem;
+    text-align: center;
+    margin: var(--space-4) 0;
+    overflow: hidden;
+}
+
+.figure img {
+    border-radius: var(--radius-md);
+    min-height: auto;
+}
+
+.figure-caption {
+    display: block;
+    margin-top: var(--space-2);
+    font-size: 0.75rem;
+    color: var(--muted-foreground);
+    text-align: center;
+}
+
+/* ── Value bullets (section 6) ──────────────────────────────────────────── */
+.value-grid {
+    display: grid;
+    gap: var(--space-4);
+    grid-template-columns: 1fr;
+}
+
+@media (min-width: 768px) {
+    .value-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (min-width: 1024px) {
+    .value-grid { grid-template-columns: repeat(3, 1fr); }
+}
+
+.value-card {
+    background: var(--background);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    padding: var(--space-4);
+}
+
+.value-card-title {
+    font-weight: 700;
+    color: var(--foreground);
+    margin-bottom: var(--space-2);
+    font-size: 0.95rem;
+}
+
+.value-card-body {
+    font-size: 0.85rem;
+    color: var(--muted-foreground);
+    margin: 0;
+}
+
+/* ── Walkthrough (section 7) · numbered steps ───────────────────────────── */
+.steps {
+    counter-reset: step;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    gap: var(--space-4);
+}
+
+.step {
+    counter-increment: step;
+    background: var(--background);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    padding: var(--space-4);
+    padding-left: 3.5rem;
+    position: relative;
+    color: var(--foreground);
+}
+
+.step::before {
+    content: counter(step);
+    position: absolute;
+    left: var(--space-4);
+    top: 50%;
+    transform: translateY(-50%);
+    width: 2rem;
+    height: 2rem;
+    background: var(--primary);
+    color: var(--primary-foreground);
+    border-radius: var(--radius-full);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-family: var(--font-brand);
+    font-size: 0.95rem;
+}
+
+.step-body {
+    font-size: 0.9rem;
+    color: var(--muted-foreground);
+    margin: 0.25rem 0 0;
+}
+
+/* ── Fact sheet KPI tiles (section 8) ───────────────────────────────────── */
+.kpi-grid {
+    display: grid;
+    gap: var(--space-4);
+    grid-template-columns: repeat(2, 1fr);
+}
+
+@media (min-width: 768px) {
+    .kpi-grid { grid-template-columns: repeat(3, 1fr); }
+}
+
+.kpi {
+    background: var(--muted);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    padding: var(--space-6) var(--space-4);
+    text-align: center;
+}
+
+.kpi-value {
+    font-family: var(--font-brand);
+    font-size: 1.75rem;
+    font-weight: 800;
+    color: var(--foreground);
+    line-height: 1;
+    margin-bottom: var(--space-2);
+}
+
+@media (min-width: 768px) {
+    .kpi-value {
+        font-size: 2.25rem;
+    }
+}
+
+.kpi-label {
+    font-size: 0.75rem;
+    color: var(--muted-foreground);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    font-weight: 700;
+}
+
+/* ── Pain points (section 2) ────────────────────────────────────────────── */
+.pain-list {
+    list-style: none;
+    padding: 0;
+    display: grid;
+    gap: var(--space-3);
+}
+
+.pain-item {
+    background: var(--background);
+    border-left: 3px solid var(--primary);
+    padding: var(--space-3) var(--space-4);
+    border-radius: var(--radius-md);
+    color: var(--foreground);
+    font-size: 0.95rem;
+}
+
+/* ── Footer ─────────────────────────────────────────────────────────────── */
+.footer {
+    text-align: center;
+    padding: var(--space-8) var(--space-4);
+    color: var(--muted-foreground);
+    font-size: 0.85rem;
+    border-top: 1px solid var(--border);
+    margin-top: var(--space-8);
+}
+
+.footer a {
+    color: var(--foreground);
+    margin: 0 var(--space-3);
+}
+
+/* ── Skip link (a11y) ───────────────────────────────────────────────────── */
+.skip-link {
+    position: absolute;
+    left: -9999px;
+    top: 0;
+    background: var(--primary);
+    color: var(--primary-foreground);
+    padding: var(--space-3) var(--space-4);
+    z-index: 100;
+    border-radius: 0 0 var(--radius-md) 0;
+}
+
+.skip-link:focus {
+    left: 0;
+}
