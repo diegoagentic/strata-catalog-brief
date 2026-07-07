@@ -116,23 +116,18 @@ img {
    LANGUAGE TOGGLE · show only one language at a time.
    Default state: <body data-lang="en"> shows [lang="en"], hides [lang="es"].
    When toggle sets data-lang="es", flip.
+   Use !important on the hide rule to defeat any later utility styles that
+   might set display on nested spans.
    ══════════════════════════════════════════════════════════════════════════ */
-body[data-lang="en"] [lang="es"] {
-    display: none;
-}
+body[data-lang="en"] [lang="es"] { display: none !important; }
+body[data-lang="es"] [lang="en"] { display: none !important; }
 
-body[data-lang="es"] [lang="en"] {
-    display: none;
-}
-
-/* ── Sticky top bar with language switcher ──────────────────────────────── */
+/* ── Sticky top bar ─────────────────────────────────────────────────────── */
 .topbar {
     position: sticky;
     top: 0;
     z-index: 50;
-    background: color-mix(in srgb, var(--background) 85%, transparent);
-    backdrop-filter: saturate(140%) blur(8px);
-    -webkit-backdrop-filter: saturate(140%) blur(8px);
+    background: var(--background);
     border-bottom: 1px solid var(--border);
     padding: var(--space-3) var(--space-4);
     display: flex;
@@ -141,56 +136,77 @@ body[data-lang="es"] [lang="en"] {
     gap: var(--space-4);
 }
 
+@supports (backdrop-filter: blur(8px)) {
+    .topbar {
+        background: color-mix(in srgb, var(--background) 82%, transparent);
+        backdrop-filter: saturate(140%) blur(10px);
+        -webkit-backdrop-filter: saturate(140%) blur(10px);
+    }
+}
+
 .topbar-brand {
     font-family: var(--font-brand);
     font-weight: 700;
-    font-size: 0.9rem;
+    font-size: 0.85rem;
     letter-spacing: -0.01em;
     color: var(--foreground);
 }
 
-.topbar-brand small {
-    font-family: var(--font-sans);
-    color: var(--muted-foreground);
-    font-weight: 400;
-    margin-left: var(--space-2);
-    font-size: 0.75rem;
-}
-
-.lang-toggle {
+/* ── Minimalist single-CTA language swap ────────────────────────────────── */
+.lang-swap {
     display: inline-flex;
     align-items: center;
-    gap: 0.25rem;
+    gap: 0.5rem;
     background: var(--card);
     border: 1px solid var(--border);
     border-radius: var(--radius-full);
-    padding: 0.25rem;
+    padding: 0.4rem 0.85rem;
     font-family: var(--font-sans);
-}
-
-.lang-toggle button {
-    background: transparent;
-    border: 0;
-    padding: 0.35rem 0.75rem;
-    font-size: 0.75rem;
-    font-weight: 700;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-    color: var(--muted-foreground);
-    cursor: pointer;
-    border-radius: var(--radius-full);
-    transition: background-color 120ms ease, color 120ms ease;
-    font-family: inherit;
-}
-
-.lang-toggle button:hover {
+    font-size: 0.78rem;
+    font-weight: 600;
     color: var(--foreground);
+    cursor: pointer;
+    transition: background-color 140ms ease, border-color 140ms ease, transform 140ms ease;
+    line-height: 1;
+    text-align: left;
 }
 
-body[data-lang="en"] .lang-toggle button[data-set="en"],
-body[data-lang="es"] .lang-toggle button[data-set="es"] {
+.lang-swap:hover {
     background: var(--primary);
+    border-color: var(--primary);
     color: var(--primary-foreground);
+}
+
+.lang-swap:active {
+    transform: scale(0.97);
+}
+
+.lang-swap:focus-visible {
+    outline: 2px solid var(--primary);
+    outline-offset: 2px;
+}
+
+.lang-swap-icon {
+    width: 14px;
+    height: 14px;
+    color: var(--muted-foreground);
+    flex-shrink: 0;
+}
+
+.lang-swap:hover .lang-swap-icon,
+.lang-swap:hover .lang-swap-chevron {
+    color: var(--primary-foreground);
+}
+
+.lang-swap-label {
+    letter-spacing: 0.01em;
+}
+
+.lang-swap-chevron {
+    width: 14px;
+    height: 14px;
+    color: var(--muted-foreground);
+    flex-shrink: 0;
 }
 
 /* ── Layout shell ───────────────────────────────────────────────────────── */
